@@ -48,7 +48,7 @@ export const chatTools = [
       const { workspace_id, ...params } = args;
       return v3Request(
         "GET",
-        `/workspaces/${workspace_id}/channels`,
+        `/workspaces/${workspace_id}/chat/channels`,
         undefined,
         params as Record<string, string | number | boolean | undefined>
       );
@@ -70,7 +70,7 @@ export const chatTools = [
     },
     handler: async (args: { workspace_id: string; [key: string]: unknown }) => {
       const { workspace_id, ...body } = args;
-      return v3Request("POST", `/workspaces/${workspace_id}/channels`, body);
+      return v3Request("POST", `/workspaces/${workspace_id}/chat/channels`, body);
     },
   },
   {
@@ -94,7 +94,7 @@ export const chatTools = [
     }) =>
       v3Request(
         "GET",
-        `/workspaces/${args.workspace_id}/channels/${args.channel_id}/messages`,
+        `/workspaces/${args.workspace_id}/chat/channels/${args.channel_id}/messages`,
         undefined,
         { cursor: args.cursor, limit: args.limit }
       ),
@@ -118,7 +118,7 @@ export const chatTools = [
     }) =>
       v3Request(
         "POST",
-        `/workspaces/${args.workspace_id}/channels/${args.channel_id}/messages`,
+        `/workspaces/${args.workspace_id}/chat/channels/${args.channel_id}/messages`,
         { content: args.content }
       ),
   },
