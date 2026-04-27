@@ -129,8 +129,9 @@ function createMcpServer(): Server {
   return server;
 }
 
-// Track active SSE transports keyed by session ID for POST routing
+// Track active SSE transports and their tokens keyed by session ID
 const activeTransports = new Map<string, SSEServerTransport>();
+const sessionTokens = new Map<string, string>();
 
 async function handleSse(req: IncomingMessage, res: ServerResponse) {
   const url = new URL(req.url ?? "/", `http://${req.headers.host}`);
@@ -151,18 +152,16 @@ async function handleSse(req: IncomingMessage, res: ServerResponse) {
 
   const transport = new SSEServerTransport("/messages", res);
   activeTransports.set(transport.sessionId, transport);
+  sessionTokens.set(transport.sessionId, token);
 
   res.on("close", () => {
     activeTransports.delete(transport.sessionId);
+    sessionTokens.delete(transport.sessionId);
   });
 
   const mcpServer = createMcpServer();
-
-  // Bind this token to the entire async context for this session
-  await tokenStorage.run(token, async () => {
-    await mcpServer.connect(transport);
-    await transport.start();
-  });
+  await mcpServer.connect(transport);
+  await transport.start();
 }
 
 async function handleMessages(req: IncomingMessage, res: ServerResponse) {
@@ -182,7 +181,13 @@ async function handleMessages(req: IncomingMessage, res: ServerResponse) {
     return;
   }
 
-  await transport.handlePostMessage(req, res);
+  // Restore the per-session token into AsyncLocalStorage for this POST context
+  const token = sessionTokens.get(sessionId);
+  if (token) {
+    await tokenStorage.run(token, () => transport.handlePostMessage(req, res));
+  } else {
+    await transport.handlePostMessage(req, res);
+  }
 }
 
 function handleHealth(_req: IncomingMessage, res: ServerResponse) {
