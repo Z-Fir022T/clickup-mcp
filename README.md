@@ -1,15 +1,24 @@
 # ClickUp MCP Server
 
-![Tools](https://img.shields.io/badge/tools-137-blue)
+![Tools](https://img.shields.io/badge/tools-182-blue)
 ![ClickUp API](https://img.shields.io/badge/ClickUp%20API-v2%20%2B%20v3-orange)
 ![Node.js](https://img.shields.io/badge/Node.js-18%2B-green)
 ![MCP](https://img.shields.io/badge/protocol-MCP-purple)
 
-A Model Context Protocol (MCP) server that exposes the full ClickUp API to any MCP-compatible AI client. Covers 137 tools across 26 categories, spanning ClickUp API v2 and v3.
+A Model Context Protocol (MCP) server that exposes the ClickUp API to any MCP-compatible AI client. The current server exposes 182 MCP tools and includes an audit matrix for the documented ClickUp v2 and v3 surface.
 
 ---
 
 ## Features
+ 
+Coverage is broader than the original README text below. Use this snapshot as the current source of truth.
+ 
+### Coverage Snapshot
+ 
+- 182 MCP tools currently exposed by the server
+- 172 documented ClickUp API operations mapped in the audit matrix
+- 0 documented operations currently marked as missing
+- Audit artifacts: `AUDIT_MATRIX.md` and `audit-matrix.json`
 
 Complete ClickUp API coverage through a single MCP server. Connect Claude Desktop, Cursor, or any MCP client to your ClickUp workspace and manage tasks, docs, goals, time tracking, webhooks, and more — all from natural language.
 
@@ -17,21 +26,21 @@ Complete ClickUp API coverage through a single MCP server. Connect Claude Deskto
 
 | Category | Tools | Description |
 |----------|-------|-------------|
-| Tasks | 17 | Full task lifecycle, assignees, dependencies, links, tags |
+| Tasks | 20 | Full task lifecycle, assignees, dependencies, links, tags, merge, and time-in-status |
 | Spaces | 9 | Space management and space-level tags |
-| Lists | 10 | Folder-based and folderless lists, list members |
-| Folders | 5 | Folder CRUD within spaces |
-| Comments | 8 | Task, list, and chat-view comments |
+| Lists | 12 | Folder-based and folderless lists, list members, and list templates |
+| Folders | 6 | Folder CRUD within spaces plus folder-from-template |
+| Comments | 10 | Task, list, chat-view, and threaded comments |
 | Goals | 8 | Goals and key results (OKRs) |
-| Time Tracking (v2) | 12 | Time entries, timers, tags for the modern v2 endpoint |
+| Time Tracking (v2) | 13 | Time entries, timers, tags, and entry history for the modern v2 endpoint |
 | Time Tracking Legacy | 4 | Per-task time tracking (legacy endpoint) |
 | Webhooks | 4 | Webhook CRUD with full event filtering |
-| Views | 6 | Team, space, folder, and list views |
+| Views | 12 | Team, space, folder, and list views with create, update, and delete |
 | Checklists | 6 | Checklists and checklist items on tasks |
-| Custom Fields | 3 | Get, set, and clear custom field values |
-| Docs (v2) | 3 | Search, retrieve, and page docs via v2 API |
-| Docs (v3) | 5 | Create, update, and delete docs and pages via v3 API |
-| Chat (v3) | 4 | Chat channels and messages via v3 API |
+| Custom Fields | 6 | Workspace, space, folder, and list field access plus set/clear values |
+| Docs (v2 compatibility) | 3 | Legacy aliases mapped onto the current docs implementation |
+| Docs (v3) | 7 | Search, retrieve, create, update, and delete docs and pages via v3 API |
+| Chat (v3) | 15 | Channel, follower, member, message, reaction, reply, and delete flows |
 | Audit Logs (v3) | 1 | Workspace audit logs (Enterprise) |
 | Authorization | 3 | Authenticated user info and OAuth token exchange |
 | Teams / Workspaces | 5 | Workspace info, members, seats, and plan |
@@ -40,8 +49,8 @@ Complete ClickUp API coverage through a single MCP server. Connect Claude Deskto
 | Roles | 1 | Custom role listing |
 | User Groups | 4 | User group (team) management |
 | Shared Hierarchy | 1 | Items shared with the authenticated user |
-| Attachments | 1 | Upload file attachments to tasks (base64) |
-| Templates | 2 | List and instantiate task templates |
+| Attachments | 2 | Task attachments in v2 and chat/message attachments in v3 |
+| Templates | 4 | Task, folder, and list template discovery/instantiation |
 | Custom Task Types | 1 | List custom task types in a workspace |
 
 ---
@@ -65,7 +74,7 @@ npm install
 npm run build
 ```
 
-This compiles TypeScript to `dist/index.js`.
+This compiles TypeScript to `dist/index.js` and `dist/http-server.js`.
 
 ---
 
@@ -174,6 +183,13 @@ Replace the path with the absolute path to your local clone.
 ---
 
 ## Tool Reference
+
+For the authoritative endpoint-to-tool mapping, use:
+
+- `AUDIT_MATRIX.md`
+- `audit-matrix.json`
+
+Those files are the best source of truth for documented ClickUp parity and live validation status.
 
 ### Authorization (3 tools)
 
