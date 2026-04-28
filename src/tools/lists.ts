@@ -64,6 +64,24 @@ export const listTools = [
     },
   },
   {
+    name: "create_folder_list_from_template",
+    description: "Create a new list in a folder from a list template",
+    inputSchema: {
+      type: "object",
+      properties: {
+        folder_id: { type: "string" },
+        template_id: { type: "string" },
+        name: { type: "string" },
+        return_immediately: { type: "boolean" },
+      },
+      required: ["folder_id", "template_id"],
+    },
+    handler: async (args: { folder_id: string; template_id: string; [key: string]: unknown }) => {
+      const { folder_id, template_id, ...body } = args;
+      return api.post(`/folder/${folder_id}/list_template/${template_id}`, body);
+    },
+  },
+  {
     name: "create_folderless_list",
     description: "Create a folderless list directly in a space",
     inputSchema: {
@@ -82,6 +100,24 @@ export const listTools = [
     handler: async (args: { space_id: string; [key: string]: unknown }) => {
       const { space_id, ...body } = args;
       return api.post(`/space/${space_id}/list`, body);
+    },
+  },
+  {
+    name: "create_space_list_from_template",
+    description: "Create a new folderless list in a space from a list template",
+    inputSchema: {
+      type: "object",
+      properties: {
+        space_id: { type: "string" },
+        template_id: { type: "string" },
+        name: { type: "string" },
+        return_immediately: { type: "boolean" },
+      },
+      required: ["space_id", "template_id"],
+    },
+    handler: async (args: { space_id: string; template_id: string; [key: string]: unknown }) => {
+      const { space_id, template_id, ...body } = args;
+      return api.post(`/space/${space_id}/list_template/${template_id}`, body);
     },
   },
   {

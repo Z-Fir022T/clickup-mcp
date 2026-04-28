@@ -44,6 +44,20 @@ export const timeTrackingTools = [
       api.get(`/team/${args.team_id}/time_entries/${args.timer_id}`),
   },
   {
+    name: "get_time_entry_history",
+    description: "Get change history for a single time entry",
+    inputSchema: {
+      type: "object",
+      properties: {
+        team_id: { type: "string" },
+        timer_id: { type: "string" },
+      },
+      required: ["team_id", "timer_id"],
+    },
+    handler: async (args: { team_id: string; timer_id: string }) =>
+      api.get(`/team/${args.team_id}/time_entries/${args.timer_id}/history`),
+  },
+  {
     name: "create_time_entry",
     description: "Create a time entry/log time on a task",
     inputSchema: {

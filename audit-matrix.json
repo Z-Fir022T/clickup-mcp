@@ -1,0 +1,2071 @@
+[
+  {
+    "api_version": "v2",
+    "tag": "Attachments",
+    "method": "POST",
+    "path": "/v2/task/{task_id}/attachment",
+    "operation_id": "CreateTaskAttachment",
+    "tool_names": [
+      "create_task_attachment"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Authorization",
+    "method": "POST",
+    "path": "/v2/oauth/token",
+    "operation_id": "GetAccessToken",
+    "tool_names": [
+      "get_access_token"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Authorization",
+    "method": "GET",
+    "path": "/v2/user",
+    "operation_id": "GetAuthorizedUser",
+    "tool_names": [
+      "get_authorized_user"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Comments",
+    "method": "DELETE",
+    "path": "/v2/comment/{comment_id}",
+    "operation_id": "DeleteComment",
+    "tool_names": [
+      "delete_comment"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Comments",
+    "method": "PUT",
+    "path": "/v2/comment/{comment_id}",
+    "operation_id": "UpdateComment",
+    "tool_names": [
+      "update_comment"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Comments",
+    "method": "GET",
+    "path": "/v2/comment/{comment_id}/reply",
+    "operation_id": "GetThreadedComments",
+    "tool_names": [
+      "get_threaded_comments"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Comments",
+    "method": "POST",
+    "path": "/v2/comment/{comment_id}/reply",
+    "operation_id": "CreateThreadedComment",
+    "tool_names": [
+      "create_threaded_comment"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Comments",
+    "method": "GET",
+    "path": "/v2/list/{list_id}/comment",
+    "operation_id": "GetListComments",
+    "tool_names": [
+      "get_list_comments"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Comments",
+    "method": "POST",
+    "path": "/v2/list/{list_id}/comment",
+    "operation_id": "CreateListComment",
+    "tool_names": [
+      "create_list_comment"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Comments",
+    "method": "GET",
+    "path": "/v2/task/{task_id}/comment",
+    "operation_id": "GetTaskComments",
+    "tool_names": [
+      "get_task_comments"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Comments",
+    "method": "POST",
+    "path": "/v2/task/{task_id}/comment",
+    "operation_id": "CreateTaskComment",
+    "tool_names": [
+      "create_task_comment"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Comments",
+    "method": "GET",
+    "path": "/v2/view/{view_id}/comment",
+    "operation_id": "GetChatViewComments",
+    "tool_names": [
+      "get_chat_view_comments"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Comments",
+    "method": "POST",
+    "path": "/v2/view/{view_id}/comment",
+    "operation_id": "CreateChatViewComment",
+    "tool_names": [
+      "create_chat_view_comment"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Custom Fields",
+    "method": "GET",
+    "path": "/v2/folder/{folder_id}/field",
+    "operation_id": "getFolderAvailableFields",
+    "tool_names": [
+      "get_folder_custom_fields"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Custom Fields",
+    "method": "GET",
+    "path": "/v2/list/{list_id}/field",
+    "operation_id": "GetAccessibleCustomFields",
+    "tool_names": [
+      "get_accessible_custom_fields"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Custom Fields",
+    "method": "GET",
+    "path": "/v2/space/{space_id}/field",
+    "operation_id": "getSpaceAvailableFields",
+    "tool_names": [
+      "get_space_custom_fields"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Custom Fields",
+    "method": "DELETE",
+    "path": "/v2/task/{task_id}/field/{field_id}",
+    "operation_id": "RemoveCustomFieldValue",
+    "tool_names": [
+      "remove_custom_field_value"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Custom Fields",
+    "method": "POST",
+    "path": "/v2/task/{task_id}/field/{field_id}",
+    "operation_id": "SetCustomFieldValue",
+    "tool_names": [
+      "set_custom_field_value"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Custom Fields",
+    "method": "GET",
+    "path": "/v2/team/{team_id}/field",
+    "operation_id": "getTeamAvailableFields",
+    "tool_names": [
+      "get_workspace_custom_fields"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Custom Task Types",
+    "method": "GET",
+    "path": "/v2/team/{team_id}/custom_item",
+    "operation_id": "GetCustomItems",
+    "tool_names": [
+      "get_custom_task_types"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Folders",
+    "method": "DELETE",
+    "path": "/v2/folder/{folder_id}",
+    "operation_id": "DeleteFolder",
+    "tool_names": [
+      "delete_folder"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Folders",
+    "method": "GET",
+    "path": "/v2/folder/{folder_id}",
+    "operation_id": "GetFolder",
+    "tool_names": [
+      "get_folder"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Folders",
+    "method": "PUT",
+    "path": "/v2/folder/{folder_id}",
+    "operation_id": "UpdateFolder",
+    "tool_names": [
+      "update_folder"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Folders",
+    "method": "GET",
+    "path": "/v2/space/{space_id}/folder",
+    "operation_id": "GetFolders",
+    "tool_names": [
+      "get_folders"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Folders",
+    "method": "POST",
+    "path": "/v2/space/{space_id}/folder",
+    "operation_id": "CreateFolder",
+    "tool_names": [
+      "create_folder"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Folders",
+    "method": "POST",
+    "path": "/v2/space/{space_id}/folder_template/{template_id}",
+    "operation_id": "CreateFolderFromTemplate",
+    "tool_names": [
+      "create_folder_from_template"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Goals",
+    "method": "DELETE",
+    "path": "/v2/goal/{goal_id}",
+    "operation_id": "DeleteGoal",
+    "tool_names": [
+      "delete_goal"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Goals",
+    "method": "GET",
+    "path": "/v2/goal/{goal_id}",
+    "operation_id": "GetGoal",
+    "tool_names": [
+      "get_goal"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Goals",
+    "method": "PUT",
+    "path": "/v2/goal/{goal_id}",
+    "operation_id": "UpdateGoal",
+    "tool_names": [
+      "update_goal"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Goals",
+    "method": "POST",
+    "path": "/v2/goal/{goal_id}/key_result",
+    "operation_id": "CreateKeyResult",
+    "tool_names": [
+      "create_key_result"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Goals",
+    "method": "DELETE",
+    "path": "/v2/key_result/{key_result_id}",
+    "operation_id": "DeleteKeyResult",
+    "tool_names": [
+      "delete_key_result"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Goals",
+    "method": "PUT",
+    "path": "/v2/key_result/{key_result_id}",
+    "operation_id": "EditKeyResult",
+    "tool_names": [
+      "update_key_result"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Goals",
+    "method": "GET",
+    "path": "/v2/team/{team_id}/goal",
+    "operation_id": "GetGoals",
+    "tool_names": [
+      "get_goals"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Goals",
+    "method": "POST",
+    "path": "/v2/team/{team_id}/goal",
+    "operation_id": "CreateGoal",
+    "tool_names": [
+      "create_goal"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Guests",
+    "method": "DELETE",
+    "path": "/v2/folder/{folder_id}/guest/{guest_id}",
+    "operation_id": "RemoveGuestFromFolder",
+    "tool_names": [
+      "remove_guest_from_folder"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Guests",
+    "method": "POST",
+    "path": "/v2/folder/{folder_id}/guest/{guest_id}",
+    "operation_id": "AddGuestToFolder",
+    "tool_names": [
+      "add_guest_to_folder"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Guests",
+    "method": "DELETE",
+    "path": "/v2/list/{list_id}/guest/{guest_id}",
+    "operation_id": "RemoveGuestFromList",
+    "tool_names": [
+      "remove_guest_from_list"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Guests",
+    "method": "POST",
+    "path": "/v2/list/{list_id}/guest/{guest_id}",
+    "operation_id": "AddGuestToList",
+    "tool_names": [
+      "add_guest_to_list"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Guests",
+    "method": "DELETE",
+    "path": "/v2/task/{task_id}/guest/{guest_id}",
+    "operation_id": "RemoveGuestFromTask",
+    "tool_names": [
+      "remove_guest_from_task"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Guests",
+    "method": "POST",
+    "path": "/v2/task/{task_id}/guest/{guest_id}",
+    "operation_id": "AddGuestToTask",
+    "tool_names": [
+      "add_guest_to_task"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Guests",
+    "method": "POST",
+    "path": "/v2/team/{team_id}/guest",
+    "operation_id": "InviteGuestToWorkspace",
+    "tool_names": [
+      "invite_guest_to_workspace"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Guests",
+    "method": "DELETE",
+    "path": "/v2/team/{team_id}/guest/{guest_id}",
+    "operation_id": "RemoveGuestFromWorkspace",
+    "tool_names": [
+      "remove_guest_from_workspace"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Guests",
+    "method": "GET",
+    "path": "/v2/team/{team_id}/guest/{guest_id}",
+    "operation_id": "GetGuest",
+    "tool_names": [
+      "get_guest"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Guests",
+    "method": "PUT",
+    "path": "/v2/team/{team_id}/guest/{guest_id}",
+    "operation_id": "EditGuestOnWorkspace",
+    "tool_names": [
+      "update_guest_on_workspace"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Lists",
+    "method": "GET",
+    "path": "/v2/folder/{folder_id}/list",
+    "operation_id": "GetLists",
+    "tool_names": [
+      "get_lists"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Lists",
+    "method": "POST",
+    "path": "/v2/folder/{folder_id}/list",
+    "operation_id": "CreateList",
+    "tool_names": [
+      "create_list"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Lists",
+    "method": "POST",
+    "path": "/v2/folder/{folder_id}/list_template/{template_id}",
+    "operation_id": "CreateFolderListFromTemplate",
+    "tool_names": [
+      "create_folder_list_from_template"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Lists",
+    "method": "DELETE",
+    "path": "/v2/list/{list_id}",
+    "operation_id": "DeleteList",
+    "tool_names": [
+      "delete_list"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Lists",
+    "method": "GET",
+    "path": "/v2/list/{list_id}",
+    "operation_id": "GetList",
+    "tool_names": [
+      "get_list"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Lists",
+    "method": "PUT",
+    "path": "/v2/list/{list_id}",
+    "operation_id": "UpdateList",
+    "tool_names": [
+      "update_list"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Lists",
+    "method": "DELETE",
+    "path": "/v2/list/{list_id}/task/{task_id}",
+    "operation_id": "RemoveTaskFromList",
+    "tool_names": [
+      "remove_task_from_list"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Lists",
+    "method": "POST",
+    "path": "/v2/list/{list_id}/task/{task_id}",
+    "operation_id": "AddTaskToList",
+    "tool_names": [
+      "add_task_to_list"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Lists",
+    "method": "GET",
+    "path": "/v2/space/{space_id}/list",
+    "operation_id": "GetFolderlessLists",
+    "tool_names": [
+      "get_folderless_lists"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Lists",
+    "method": "POST",
+    "path": "/v2/space/{space_id}/list",
+    "operation_id": "CreateFolderlessList",
+    "tool_names": [
+      "create_folderless_list"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Lists",
+    "method": "POST",
+    "path": "/v2/space/{space_id}/list_template/{template_id}",
+    "operation_id": "CreateSpaceListFromTemplate",
+    "tool_names": [
+      "create_space_list_from_template"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Members",
+    "method": "GET",
+    "path": "/v2/list/{list_id}/member",
+    "operation_id": "GetListMembers",
+    "tool_names": [
+      "get_list_members"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Members",
+    "method": "GET",
+    "path": "/v2/task/{task_id}/member",
+    "operation_id": "GetTaskMembers",
+    "tool_names": [
+      "get_bulk_tasks_time_in_status"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Roles",
+    "method": "GET",
+    "path": "/v2/team/{team_id}/customroles",
+    "operation_id": "GetCustomRoles",
+    "tool_names": [
+      "get_custom_roles"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Shared Hierarchy",
+    "method": "GET",
+    "path": "/v2/team/{team_id}/shared",
+    "operation_id": "SharedHierarchy",
+    "tool_names": [
+      "get_shared_hierarchy"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Spaces",
+    "method": "DELETE",
+    "path": "/v2/space/{space_id}",
+    "operation_id": "DeleteSpace",
+    "tool_names": [
+      "delete_space"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Spaces",
+    "method": "GET",
+    "path": "/v2/space/{space_id}",
+    "operation_id": "GetSpace",
+    "tool_names": [
+      "get_space"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Spaces",
+    "method": "PUT",
+    "path": "/v2/space/{space_id}",
+    "operation_id": "UpdateSpace",
+    "tool_names": [
+      "update_space"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Spaces",
+    "method": "GET",
+    "path": "/v2/team/{team_id}/space",
+    "operation_id": "GetSpaces",
+    "tool_names": [
+      "get_spaces"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Spaces",
+    "method": "POST",
+    "path": "/v2/team/{team_id}/space",
+    "operation_id": "CreateSpace",
+    "tool_names": [
+      "create_space"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Tags",
+    "method": "GET",
+    "path": "/v2/space/{space_id}/tag",
+    "operation_id": "GetSpaceTags",
+    "tool_names": [
+      "get_space_tags"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Tags",
+    "method": "POST",
+    "path": "/v2/space/{space_id}/tag",
+    "operation_id": "CreateSpaceTag",
+    "tool_names": [
+      "create_space_tag"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Tags",
+    "method": "DELETE",
+    "path": "/v2/space/{space_id}/tag/{tag_name}",
+    "operation_id": "DeleteSpaceTag",
+    "tool_names": [
+      "delete_space_tag"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Tags",
+    "method": "PUT",
+    "path": "/v2/space/{space_id}/tag/{tag_name}",
+    "operation_id": "EditSpaceTag",
+    "tool_names": [
+      "update_space_tag"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Tags",
+    "method": "DELETE",
+    "path": "/v2/task/{task_id}/tag/{tag_name}",
+    "operation_id": "RemoveTagFromTask",
+    "tool_names": [
+      "add_task_assignee"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Tags",
+    "method": "POST",
+    "path": "/v2/task/{task_id}/tag/{tag_name}",
+    "operation_id": "AddTagToTask",
+    "tool_names": [
+      "get_task_members"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Task Checklists",
+    "method": "DELETE",
+    "path": "/v2/checklist/{checklist_id}",
+    "operation_id": "DeleteChecklist",
+    "tool_names": [
+      "delete_checklist"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Task Checklists",
+    "method": "PUT",
+    "path": "/v2/checklist/{checklist_id}",
+    "operation_id": "EditChecklist",
+    "tool_names": [
+      "update_checklist"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Task Checklists",
+    "method": "POST",
+    "path": "/v2/checklist/{checklist_id}/checklist_item",
+    "operation_id": "CreateChecklistItem",
+    "tool_names": [
+      "create_checklist_item"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Task Checklists",
+    "method": "DELETE",
+    "path": "/v2/checklist/{checklist_id}/checklist_item/{checklist_item_id}",
+    "operation_id": "DeleteChecklistItem",
+    "tool_names": [
+      "delete_checklist_item"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Task Checklists",
+    "method": "PUT",
+    "path": "/v2/checklist/{checklist_id}/checklist_item/{checklist_item_id}",
+    "operation_id": "EditChecklistItem",
+    "tool_names": [
+      "update_checklist_item"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Task Checklists",
+    "method": "POST",
+    "path": "/v2/task/{task_id}/checklist",
+    "operation_id": "CreateChecklist",
+    "tool_names": [
+      "create_checklist"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Task Relationships",
+    "method": "DELETE",
+    "path": "/v2/task/{task_id}/dependency",
+    "operation_id": "DeleteDependency",
+    "tool_names": [
+      "delete_task_dependency"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Task Relationships",
+    "method": "POST",
+    "path": "/v2/task/{task_id}/dependency",
+    "operation_id": "AddDependency",
+    "tool_names": [
+      "move_task_to_list"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Task Relationships",
+    "method": "DELETE",
+    "path": "/v2/task/{task_id}/link/{links_to}",
+    "operation_id": "DeleteTaskLink",
+    "tool_names": [
+      "replace_task_time_estimates_by_user"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Task Relationships",
+    "method": "POST",
+    "path": "/v2/task/{task_id}/link/{links_to}",
+    "operation_id": "AddTaskLink",
+    "tool_names": [
+      "update_task_time_estimates_by_user"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Tasks",
+    "method": "GET",
+    "path": "/v2/list/{list_id}/task",
+    "operation_id": "GetTasks",
+    "tool_names": [
+      "get_tasks"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Tasks",
+    "method": "POST",
+    "path": "/v2/list/{list_id}/task",
+    "operation_id": "CreateTask",
+    "tool_names": [
+      "create_task"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Tasks",
+    "method": "POST",
+    "path": "/v2/list/{list_id}/taskTemplate/{template_id}",
+    "operation_id": "CreateTaskFromTemplate",
+    "tool_names": [
+      "create_task_from_template"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Tasks",
+    "method": "GET",
+    "path": "/v2/task/bulk_time_in_status/task_ids",
+    "operation_id": "GetBulkTasks'TimeinStatus",
+    "tool_names": [
+      "delete_task"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Tasks",
+    "method": "DELETE",
+    "path": "/v2/task/{task_id}",
+    "operation_id": "DeleteTask",
+    "tool_names": [
+      "delete_task"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Tasks",
+    "method": "GET",
+    "path": "/v2/task/{task_id}",
+    "operation_id": "GetTask",
+    "tool_names": [
+      "get_task"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Tasks",
+    "method": "PUT",
+    "path": "/v2/task/{task_id}",
+    "operation_id": "UpdateTask",
+    "tool_names": [
+      "update_task"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Tasks",
+    "method": "POST",
+    "path": "/v2/task/{task_id}/merge",
+    "operation_id": "mergeTasks",
+    "tool_names": [
+      "get_filtered_team_tasks"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Tasks",
+    "method": "GET",
+    "path": "/v2/task/{task_id}/time_in_status",
+    "operation_id": "GetTask'sTimeinStatus",
+    "tool_names": [
+      "get_task_time_in_status"
+    ],
+    "status": "validated_live_fail",
+    "note": "401 live response"
+  },
+  {
+    "api_version": "v2",
+    "tag": "Tasks",
+    "method": "GET",
+    "path": "/v2/team/{team_Id}/task",
+    "operation_id": "GetFilteredTeamTasks",
+    "tool_names": [
+      "update_task"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Templates",
+    "method": "GET",
+    "path": "/v2/team/{team_id}/folder_template",
+    "operation_id": "GetFolderTemplates",
+    "tool_names": [
+      "get_folder_templates"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Templates",
+    "method": "GET",
+    "path": "/v2/team/{team_id}/list_template",
+    "operation_id": "GetListTemplates",
+    "tool_names": [
+      "get_list_templates"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Templates",
+    "method": "GET",
+    "path": "/v2/team/{team_id}/taskTemplate",
+    "operation_id": "GetTaskTemplates",
+    "tool_names": [
+      "get_task_templates"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Time Tracking",
+    "method": "GET",
+    "path": "/v2/team/{team_Id}/time_entries",
+    "operation_id": "Gettimeentrieswithinadaterange",
+    "tool_names": [
+      "get_time_entries"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Time Tracking",
+    "method": "POST",
+    "path": "/v2/team/{team_Id}/time_entries",
+    "operation_id": "Createatimeentry",
+    "tool_names": [
+      "create_time_entry"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Time Tracking",
+    "method": "POST",
+    "path": "/v2/team/{team_Id}/time_entries/start",
+    "operation_id": "StartatimeEntry",
+    "tool_names": [
+      "start_timer"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Time Tracking",
+    "method": "GET",
+    "path": "/v2/team/{team_id}/time_entries/current",
+    "operation_id": "Getrunningtimeentry",
+    "tool_names": [
+      "get_running_timer"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Time Tracking",
+    "method": "POST",
+    "path": "/v2/team/{team_id}/time_entries/stop",
+    "operation_id": "StopatimeEntry",
+    "tool_names": [
+      "stop_timer"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Time Tracking",
+    "method": "DELETE",
+    "path": "/v2/team/{team_id}/time_entries/tags",
+    "operation_id": "Removetagsfromtimeentries",
+    "tool_names": [
+      "remove_tags_from_time_entries"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Time Tracking",
+    "method": "GET",
+    "path": "/v2/team/{team_id}/time_entries/tags",
+    "operation_id": "Getalltagsfromtimeentries",
+    "tool_names": [
+      "get_time_entry_tags"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Time Tracking",
+    "method": "POST",
+    "path": "/v2/team/{team_id}/time_entries/tags",
+    "operation_id": "Addtagsfromtimeentries",
+    "tool_names": [
+      "add_tags_to_time_entries"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Time Tracking",
+    "method": "PUT",
+    "path": "/v2/team/{team_id}/time_entries/tags",
+    "operation_id": "Changetagnamesfromtimeentries",
+    "tool_names": [
+      "change_tag_name_from_time_entries"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Time Tracking",
+    "method": "DELETE",
+    "path": "/v2/team/{team_id}/time_entries/{timer_id}",
+    "operation_id": "DeleteatimeEntry",
+    "tool_names": [
+      "delete_time_entry"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Time Tracking",
+    "method": "GET",
+    "path": "/v2/team/{team_id}/time_entries/{timer_id}",
+    "operation_id": "Getsingulartimeentry",
+    "tool_names": [
+      "get_time_entry"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Time Tracking",
+    "method": "PUT",
+    "path": "/v2/team/{team_id}/time_entries/{timer_id}",
+    "operation_id": "UpdateatimeEntry",
+    "tool_names": [
+      "update_time_entry"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Time Tracking",
+    "method": "GET",
+    "path": "/v2/team/{team_id}/time_entries/{timer_id}/history",
+    "operation_id": "Gettimeentryhistory",
+    "tool_names": [
+      "get_time_entry_history"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Time Tracking (Legacy)",
+    "method": "GET",
+    "path": "/v2/task/{task_id}/time",
+    "operation_id": "Gettrackedtime",
+    "tool_names": [
+      "get_task_time_tracked"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Time Tracking (Legacy)",
+    "method": "POST",
+    "path": "/v2/task/{task_id}/time",
+    "operation_id": "Tracktime",
+    "tool_names": [
+      "track_time_on_task"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Time Tracking (Legacy)",
+    "method": "DELETE",
+    "path": "/v2/task/{task_id}/time/{interval_id}",
+    "operation_id": "Deletetimetracked",
+    "tool_names": [
+      "delete_task_time_tracked"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Time Tracking (Legacy)",
+    "method": "PUT",
+    "path": "/v2/task/{task_id}/time/{interval_id}",
+    "operation_id": "Edittimetracked",
+    "tool_names": [
+      "update_task_time_tracked"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "User Groups",
+    "method": "GET",
+    "path": "/v2/group",
+    "operation_id": "GetTeams1",
+    "tool_names": [
+      "get_user_groups"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "User Groups",
+    "method": "DELETE",
+    "path": "/v2/group/{group_id}",
+    "operation_id": "DeleteTeam",
+    "tool_names": [
+      "delete_user_group"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "User Groups",
+    "method": "PUT",
+    "path": "/v2/group/{group_id}",
+    "operation_id": "UpdateTeam",
+    "tool_names": [
+      "update_user_group"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "User Groups",
+    "method": "POST",
+    "path": "/v2/team/{team_id}/group",
+    "operation_id": "CreateUserGroup",
+    "tool_names": [
+      "create_user_group"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Users",
+    "method": "POST",
+    "path": "/v2/team/{team_id}/user",
+    "operation_id": "InviteUserToWorkspace",
+    "tool_names": [
+      "invite_user_to_workspace"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Users",
+    "method": "DELETE",
+    "path": "/v2/team/{team_id}/user/{user_id}",
+    "operation_id": "RemoveUserFromWorkspace",
+    "tool_names": [
+      "remove_user_from_workspace"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Users",
+    "method": "GET",
+    "path": "/v2/team/{team_id}/user/{user_id}",
+    "operation_id": "GetUser",
+    "tool_names": [
+      "get_user"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Users",
+    "method": "PUT",
+    "path": "/v2/team/{team_id}/user/{user_id}",
+    "operation_id": "EditUserOnWorkspace",
+    "tool_names": [
+      "update_user_on_workspace"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Views",
+    "method": "GET",
+    "path": "/v2/folder/{folder_id}/view",
+    "operation_id": "GetFolderViews",
+    "tool_names": [
+      "get_folder_views"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Views",
+    "method": "POST",
+    "path": "/v2/folder/{folder_id}/view",
+    "operation_id": "CreateFolderView",
+    "tool_names": [
+      "create_folder_view"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Views",
+    "method": "GET",
+    "path": "/v2/list/{list_id}/view",
+    "operation_id": "GetListViews",
+    "tool_names": [
+      "get_list_views"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Views",
+    "method": "POST",
+    "path": "/v2/list/{list_id}/view",
+    "operation_id": "CreateListView",
+    "tool_names": [
+      "create_list_view"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Views",
+    "method": "GET",
+    "path": "/v2/space/{space_id}/view",
+    "operation_id": "GetSpaceViews",
+    "tool_names": [
+      "get_space_views"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Views",
+    "method": "POST",
+    "path": "/v2/space/{space_id}/view",
+    "operation_id": "CreateSpaceView",
+    "tool_names": [
+      "create_space_view"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Views",
+    "method": "GET",
+    "path": "/v2/team/{team_id}/view",
+    "operation_id": "GetTeamViews",
+    "tool_names": [
+      "get_team_views"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Views",
+    "method": "POST",
+    "path": "/v2/team/{team_id}/view",
+    "operation_id": "CreateTeamView",
+    "tool_names": [
+      "create_team_view"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Views",
+    "method": "DELETE",
+    "path": "/v2/view/{view_id}",
+    "operation_id": "DeleteView",
+    "tool_names": [
+      "delete_view"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Views",
+    "method": "GET",
+    "path": "/v2/view/{view_id}",
+    "operation_id": "GetView",
+    "tool_names": [
+      "get_view"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Views",
+    "method": "PUT",
+    "path": "/v2/view/{view_id}",
+    "operation_id": "UpdateView",
+    "tool_names": [
+      "update_view"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Views",
+    "method": "GET",
+    "path": "/v2/view/{view_id}/task",
+    "operation_id": "GetViewTasks",
+    "tool_names": [
+      "get_view_tasks"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Webhooks",
+    "method": "GET",
+    "path": "/v2/team/{team_id}/webhook",
+    "operation_id": "GetWebhooks",
+    "tool_names": [
+      "get_webhooks"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Webhooks",
+    "method": "POST",
+    "path": "/v2/team/{team_id}/webhook",
+    "operation_id": "CreateWebhook",
+    "tool_names": [
+      "create_webhook"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Webhooks",
+    "method": "DELETE",
+    "path": "/v2/webhook/{webhook_id}",
+    "operation_id": "DeleteWebhook",
+    "tool_names": [
+      "delete_webhook"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Webhooks",
+    "method": "PUT",
+    "path": "/v2/webhook/{webhook_id}",
+    "operation_id": "UpdateWebhook",
+    "tool_names": [
+      "update_webhook"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Workspaces",
+    "method": "GET",
+    "path": "/v2/team",
+    "operation_id": "GetAuthorizedTeams",
+    "tool_names": [
+      "get_authorized_teams",
+      "get_workspace_plan"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Workspaces",
+    "method": "GET",
+    "path": "/v2/team/{team_id}/plan",
+    "operation_id": "GetWorkspaceplan",
+    "tool_names": [
+      "get_workspace_seats"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v2",
+    "tag": "Workspaces",
+    "method": "GET",
+    "path": "/v2/team/{team_id}/seats",
+    "operation_id": "GetWorkspaceseats",
+    "tool_names": [
+      "get_team_members"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v3",
+    "tag": "Acls",
+    "method": "PATCH",
+    "path": "/api/v3/workspaces/{workspace_id}/{object_type}/{object_id}/acls",
+    "operation_id": "publicPatchAcl",
+    "tool_names": [
+      "update_acl"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v3",
+    "tag": "Attachments",
+    "method": "GET",
+    "path": "/api/v3/workspaces/{workspace_id}/{entity_type}/{entity_id}/attachments",
+    "operation_id": "getParentEntityAttachments",
+    "tool_names": [
+      "get_entity_attachments"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v3",
+    "tag": "Attachments",
+    "method": "POST",
+    "path": "/api/v3/workspaces/{workspace_id}/{entity_type}/{entity_id}/attachments",
+    "operation_id": "postEntityAttachment",
+    "tool_names": [
+      "create_entity_attachment"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v3",
+    "tag": "Auditlogs",
+    "method": "POST",
+    "path": "/api/v3/workspaces/{workspace_id}/auditlogs",
+    "operation_id": "queryAuditLog",
+    "tool_names": [
+      "query_audit_logs",
+      "get_audit_logs"
+    ],
+    "status": "validated_live_fail",
+    "note": "404 live response"
+  },
+  {
+    "api_version": "v3",
+    "tag": "Chat",
+    "method": "GET",
+    "path": "/api/v3/workspaces/{workspace_id}/chat/channels",
+    "operation_id": "getChatChannels",
+    "tool_names": [
+      "get_chat_channels"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v3",
+    "tag": "Chat",
+    "method": "POST",
+    "path": "/api/v3/workspaces/{workspace_id}/chat/channels",
+    "operation_id": "createChatChannel",
+    "tool_names": [
+      "create_chat_channel"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v3",
+    "tag": "Chat",
+    "method": "POST",
+    "path": "/api/v3/workspaces/{workspace_id}/chat/channels/direct_message",
+    "operation_id": "createDirectMessageChatChannel",
+    "tool_names": [
+      "create_direct_message_channel"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v3",
+    "tag": "Chat",
+    "method": "POST",
+    "path": "/api/v3/workspaces/{workspace_id}/chat/channels/location",
+    "operation_id": "createLocationChatChannel",
+    "tool_names": [
+      "create_location_chat_channel"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v3",
+    "tag": "Chat",
+    "method": "DELETE",
+    "path": "/api/v3/workspaces/{workspace_id}/chat/channels/{channel_id}",
+    "operation_id": "deleteChatChannel",
+    "tool_names": [
+      "delete_chat_channel"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v3",
+    "tag": "Chat",
+    "method": "GET",
+    "path": "/api/v3/workspaces/{workspace_id}/chat/channels/{channel_id}",
+    "operation_id": "getChatChannel",
+    "tool_names": [
+      "get_chat_channel"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v3",
+    "tag": "Chat",
+    "method": "PATCH",
+    "path": "/api/v3/workspaces/{workspace_id}/chat/channels/{channel_id}",
+    "operation_id": "updateChatChannel",
+    "tool_names": [
+      "update_chat_channel"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v3",
+    "tag": "Chat",
+    "method": "GET",
+    "path": "/api/v3/workspaces/{workspace_id}/chat/channels/{channel_id}/followers",
+    "operation_id": "getChatChannelFollowers",
+    "tool_names": [
+      "get_chat_channel_followers"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v3",
+    "tag": "Chat",
+    "method": "GET",
+    "path": "/api/v3/workspaces/{workspace_id}/chat/channels/{channel_id}/members",
+    "operation_id": "getChatChannelMembers",
+    "tool_names": [
+      "get_chat_channel_members"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v3",
+    "tag": "Chat",
+    "method": "GET",
+    "path": "/api/v3/workspaces/{workspace_id}/chat/channels/{channel_id}/messages",
+    "operation_id": "getChatMessages",
+    "tool_names": [
+      "get_channel_messages"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v3",
+    "tag": "Chat",
+    "method": "POST",
+    "path": "/api/v3/workspaces/{workspace_id}/chat/channels/{channel_id}/messages",
+    "operation_id": "createChatMessage",
+    "tool_names": [
+      "send_chat_message"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v3",
+    "tag": "Chat",
+    "method": "DELETE",
+    "path": "/api/v3/workspaces/{workspace_id}/chat/messages/{message_id}",
+    "operation_id": "deleteChatMessage",
+    "tool_names": [
+      "delete_chat_message"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v3",
+    "tag": "Chat",
+    "method": "PATCH",
+    "path": "/api/v3/workspaces/{workspace_id}/chat/messages/{message_id}",
+    "operation_id": "patchChatMessage",
+    "tool_names": [
+      "update_chat_message"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v3",
+    "tag": "Chat",
+    "method": "GET",
+    "path": "/api/v3/workspaces/{workspace_id}/chat/messages/{message_id}/reactions",
+    "operation_id": "getChatMessageReactions",
+    "tool_names": [
+      "get_chat_message_reactions"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v3",
+    "tag": "Chat",
+    "method": "POST",
+    "path": "/api/v3/workspaces/{workspace_id}/chat/messages/{message_id}/reactions",
+    "operation_id": "createChatReaction",
+    "tool_names": [
+      "create_chat_reaction"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v3",
+    "tag": "Chat",
+    "method": "DELETE",
+    "path": "/api/v3/workspaces/{workspace_id}/chat/messages/{message_id}/reactions/{reaction}",
+    "operation_id": "deleteChatReaction",
+    "tool_names": [
+      "delete_chat_reaction"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v3",
+    "tag": "Chat",
+    "method": "GET",
+    "path": "/api/v3/workspaces/{workspace_id}/chat/messages/{message_id}/replies",
+    "operation_id": "getChatMessageReplies",
+    "tool_names": [
+      "get_chat_message_replies"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v3",
+    "tag": "Chat",
+    "method": "POST",
+    "path": "/api/v3/workspaces/{workspace_id}/chat/messages/{message_id}/replies",
+    "operation_id": "createReplyMessage",
+    "tool_names": [
+      "create_reply_message"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v3",
+    "tag": "Chat",
+    "method": "GET",
+    "path": "/api/v3/workspaces/{workspace_id}/chat/messages/{message_id}/tagged_users",
+    "operation_id": "getChatMessageTaggedUsers",
+    "tool_names": [
+      "get_chat_message_tagged_users"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v3",
+    "tag": "Comments",
+    "method": "GET",
+    "path": "/api/v3/workspaces/{workspace_id}/comments/types/{comment_type}/subtypes",
+    "operation_id": "getSubtypes",
+    "tool_names": [
+      "get_comment_subtypes"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v3",
+    "tag": "Docs",
+    "method": "GET",
+    "path": "/api/v3/workspaces/{workspace_id}/docs",
+    "operation_id": "searchDocsPublic",
+    "tool_names": [
+      "search_docs",
+      "search_docs_v3"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v3",
+    "tag": "Docs",
+    "method": "POST",
+    "path": "/api/v3/workspaces/{workspace_id}/docs",
+    "operation_id": "createDocPublic",
+    "tool_names": [
+      "create_doc"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v3",
+    "tag": "Docs",
+    "method": "GET",
+    "path": "/api/v3/workspaces/{workspace_id}/docs/{doc_id}",
+    "operation_id": "getDocPublic",
+    "tool_names": [
+      "get_doc",
+      "get_doc_v3"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v3",
+    "tag": "Docs",
+    "method": "GET",
+    "path": "/api/v3/workspaces/{workspace_id}/docs/{doc_id}/page_listing",
+    "operation_id": "getDocPageListingPublic",
+    "tool_names": [
+      "get_doc_page_listing"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v3",
+    "tag": "Docs",
+    "method": "GET",
+    "path": "/api/v3/workspaces/{workspace_id}/docs/{doc_id}/pages",
+    "operation_id": "getDocPagesPublic",
+    "tool_names": [
+      "get_doc_pages",
+      "get_doc_pages_v3"
+    ],
+    "status": "validated_live_ok",
+    "note": null
+  },
+  {
+    "api_version": "v3",
+    "tag": "Docs",
+    "method": "POST",
+    "path": "/api/v3/workspaces/{workspace_id}/docs/{doc_id}/pages",
+    "operation_id": "createPagePublic",
+    "tool_names": [
+      "create_doc_page"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v3",
+    "tag": "Docs",
+    "method": "GET",
+    "path": "/api/v3/workspaces/{workspace_id}/docs/{doc_id}/pages/{page_id}",
+    "operation_id": "getPagePublic",
+    "tool_names": [
+      "get_doc_page"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v3",
+    "tag": "Docs",
+    "method": "PUT",
+    "path": "/api/v3/workspaces/{workspace_id}/docs/{doc_id}/pages/{page_id}",
+    "operation_id": "editPagePublic",
+    "tool_names": [
+      "update_doc_page"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v3",
+    "tag": "Tasks",
+    "method": "PUT",
+    "path": "/api/v3/workspaces/{workspace_id}/tasks/{task_id}/home_list/{list_id}",
+    "operation_id": "moveTask",
+    "tool_names": [
+      "remove_task_assignee"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v3",
+    "tag": "Tasks",
+    "method": "PATCH",
+    "path": "/api/v3/workspaces/{workspace_id}/tasks/{task_id}/time_estimates_by_user",
+    "operation_id": "updateTimeEstimatesByUser",
+    "tool_names": [
+      "get_task_dependencies"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  },
+  {
+    "api_version": "v3",
+    "tag": "Tasks",
+    "method": "PUT",
+    "path": "/api/v3/workspaces/{workspace_id}/tasks/{task_id}/time_estimates_by_user",
+    "operation_id": "replaceTimeEstimatesByUser",
+    "tool_names": [
+      "add_task_dependency"
+    ],
+    "status": "implemented_not_live_tested",
+    "note": null
+  }
+]

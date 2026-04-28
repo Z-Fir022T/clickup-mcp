@@ -36,6 +36,9 @@ import { templateTools } from "./tools/templates.js";
 import { chatTools } from "./tools/v3-chat.js";
 import { auditTools } from "./tools/v3-audit.js";
 import { v3DocTools } from "./tools/v3-docs.js";
+import { v3AttachmentTools } from "./tools/v3-attachments.js";
+import { v3AclTools } from "./tools/v3-acls.js";
+import { v3CommentTools } from "./tools/v3-comments.js";
 
 type ToolDef = {
   name: string;
@@ -83,6 +86,9 @@ const allTools: ToolDef[] = [
   ...chatTools,
   ...auditTools,
   ...v3DocTools,
+  ...v3AttachmentTools,
+  ...v3AclTools,
+  ...v3CommentTools,
 ] as ToolDef[];
 
 const toolMap = new Map(allTools.map((t) => [t.name, t]));

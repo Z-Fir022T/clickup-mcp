@@ -69,4 +69,22 @@ export const folderTools = [
     handler: async (args: { folder_id: string }) =>
       api.delete(`/folder/${args.folder_id}`),
   },
+  {
+    name: "create_folder_from_template",
+    description: "Create a new folder from a folder template",
+    inputSchema: {
+      type: "object",
+      properties: {
+        space_id: { type: "string" },
+        template_id: { type: "string" },
+        name: { type: "string" },
+        return_immediately: { type: "boolean" },
+      },
+      required: ["space_id", "template_id"],
+    },
+    handler: async (args: { space_id: string; template_id: string; [key: string]: unknown }) => {
+      const { space_id, template_id, ...body } = args;
+      return api.post(`/space/${space_id}/folder_template/${template_id}`, body);
+    },
+  },
 ];

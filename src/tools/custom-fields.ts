@@ -2,6 +2,19 @@ import { api } from "../clickup-client.js";
 
 export const customFieldTools = [
   {
+    name: "get_folder_custom_fields",
+    description: "Get custom fields available at the folder level",
+    inputSchema: {
+      type: "object",
+      properties: {
+        folder_id: { type: "string" },
+      },
+      required: ["folder_id"],
+    },
+    handler: async (args: { folder_id: string }) =>
+      api.get(`/folder/${args.folder_id}/field`),
+  },
+  {
     name: "get_accessible_custom_fields",
     description: "Get all custom fields accessible in a list",
     inputSchema: {
@@ -13,6 +26,32 @@ export const customFieldTools = [
     },
     handler: async (args: { list_id: string }) =>
       api.get(`/list/${args.list_id}/field`),
+  },
+  {
+    name: "get_space_custom_fields",
+    description: "Get custom fields available at the space level",
+    inputSchema: {
+      type: "object",
+      properties: {
+        space_id: { type: "string" },
+      },
+      required: ["space_id"],
+    },
+    handler: async (args: { space_id: string }) =>
+      api.get(`/space/${args.space_id}/field`),
+  },
+  {
+    name: "get_workspace_custom_fields",
+    description: "Get custom fields available at the workspace level",
+    inputSchema: {
+      type: "object",
+      properties: {
+        team_id: { type: "string" },
+      },
+      required: ["team_id"],
+    },
+    handler: async (args: { team_id: string }) =>
+      api.get(`/team/${args.team_id}/field`),
   },
   {
     name: "set_custom_field_value",

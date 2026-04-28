@@ -138,4 +138,42 @@ export const commentTools = [
     handler: async (args: { comment_id: string }) =>
       api.delete(`/comment/${args.comment_id}`),
   },
+  {
+    name: "get_threaded_comments",
+    description: "Get threaded replies for a parent comment",
+    inputSchema: {
+      type: "object",
+      properties: {
+        comment_id: { type: "string" },
+        start: { type: "number" },
+        start_id: { type: "string" },
+      },
+      required: ["comment_id"],
+    },
+    handler: async (args: { comment_id: string; [key: string]: unknown }) => {
+      const { comment_id, ...params } = args;
+      return api.get(
+        `/comment/${comment_id}/reply`,
+        params as Record<string, string | number | boolean | undefined>
+      );
+    },
+  },
+  {
+    name: "create_threaded_comment",
+    description: "Create a threaded reply to an existing comment",
+    inputSchema: {
+      type: "object",
+      properties: {
+        comment_id: { type: "string" },
+        comment_text: { type: "string" },
+        assignee: { type: "number" },
+        notify_all: { type: "boolean" },
+      },
+      required: ["comment_id", "comment_text"],
+    },
+    handler: async (args: { comment_id: string; [key: string]: unknown }) => {
+      const { comment_id, ...body } = args;
+      return api.post(`/comment/${comment_id}/reply`, body);
+    },
+  },
 ];

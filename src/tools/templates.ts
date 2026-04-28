@@ -2,6 +2,34 @@ import { api } from "../clickup-client.js";
 
 export const templateTools = [
   {
+    name: "get_folder_templates",
+    description: "Get all folder templates in a workspace",
+    inputSchema: {
+      type: "object",
+      properties: {
+        team_id: { type: "string" },
+        page: { type: "number", description: "Page number (0-indexed)" },
+      },
+      required: ["team_id"],
+    },
+    handler: async (args: { team_id: string; page?: number }) =>
+      api.get(`/team/${args.team_id}/folder_template`, { page: args.page }),
+  },
+  {
+    name: "get_list_templates",
+    description: "Get all list templates in a workspace",
+    inputSchema: {
+      type: "object",
+      properties: {
+        team_id: { type: "string" },
+        page: { type: "number", description: "Page number (0-indexed)" },
+      },
+      required: ["team_id"],
+    },
+    handler: async (args: { team_id: string; page?: number }) =>
+      api.get(`/team/${args.team_id}/list_template`, { page: args.page }),
+  },
+  {
     name: "get_task_templates",
     description: "Get all task templates in a workspace",
     inputSchema: {

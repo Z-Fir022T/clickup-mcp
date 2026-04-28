@@ -1,18 +1,5 @@
-import { api, getApiToken } from "../clickup-client.js";
-
-const BASE_V3 = "https://api.clickup.com/api/v3";
-
-async function v3Put<T>(path: string, body?: unknown): Promise<T> {
-  const token = getApiToken();
-  const res = await fetch(`${BASE_V3}${path}`, {
-    method: "PUT",
-    headers: { Authorization: token, "Content-Type": "application/json" },
-    body: body ? JSON.stringify(body) : undefined,
-  });
-  const data = await res.json();
-  if (!res.ok) throw new Error(`ClickUp v3 API error ${res.status}: ${JSON.stringify(data)}`);
-  return data as T;
-}
+import { api } from "../clickup-client.js";
+import { clickupV3Request } from "../clickup-client-v3.js";
 
 export const taskTools = [
   {
@@ -206,6 +193,66 @@ export const taskTools = [
     },
   },
   {
+    name: "get_bulk_tasks_time_in_status",
+    description: "Get time in status for multiple tasks",
+    inputSchema: {
+      type: "object",
+      properties: {
+        task_ids: {
+          type: "string",
+          description: "Comma-separated ClickUp task IDs",
+        },
+      },
+      required: ["task_ids"],
+    },
+    handler: async (args: { task_ids: string }) =>
+      api.get(`/task/bulk_time_in_status/task_ids`, { task_ids: args.task_ids }),
+  },
+  {
+    name: "merge_tasks",
+    description: "Merge one or more tasks into a target task",
+    inputSchema: {
+      type: "object",
+      properties: {
+        task_id: { type: "string", description: "Target task ID" },
+        source_task_ids: {
+          type: "array",
+          items: { type: "string" },
+          description: "Source task IDs that will be merged into the target task",
+        },
+      },
+      required: ["task_id", "source_task_ids"],
+    },
+    handler: async (args: { task_id: string; source_task_ids: string[] }) =>
+      api.post(`/task/${args.task_id}/merge`, {
+        source_task_ids: args.source_task_ids,
+      }),
+  },
+  {
+    name: "get_task_time_in_status",
+    description: "Get how long a task has spent in each status",
+    inputSchema: {
+      type: "object",
+      properties: {
+        task_id: { type: "string" },
+        custom_task_ids: { type: "boolean" },
+        team_id: { type: "string" },
+      },
+      required: ["task_id"],
+    },
+    handler: async (args: {
+      task_id: string;
+      custom_task_ids?: boolean;
+      team_id?: string;
+    }) => {
+      const qs: string[] = [];
+      if (args.custom_task_ids) qs.push(`custom_task_ids=true`);
+      if (args.team_id) qs.push(`team_id=${encodeURIComponent(args.team_id)}`);
+      const path = `/task/${args.task_id}/time_in_status${qs.length ? `?${qs.join("&")}` : ""}`;
+      return api.get(path);
+    },
+  },
+  {
     name: "move_task_to_list",
     description: "Move a task to a different list (changes the task's home List). Uses ClickUp API v3.",
     inputSchema: {
@@ -218,7 +265,54 @@ export const taskTools = [
       required: ["workspace_id", "task_id", "list_id"],
     },
     handler: async (args: { workspace_id: string; task_id: string; list_id: string }) =>
-      v3Put(`/workspaces/${args.workspace_id}/tasks/${args.task_id}/home_list/${args.list_id}`),
+      clickupV3Request(
+        "PUT",
+        `/api/v3/workspaces/${args.workspace_id}/tasks/${args.task_id}/home_list/${args.list_id}`
+      ),
+  },
+  {
+    name: "update_task_time_estimates_by_user",
+    description: "Patch time estimates for specific assignees on a task using API v3",
+    inputSchema: {
+      type: "object",
+      properties: {
+        workspace_id: { type: "string" },
+        task_id: { type: "string" },
+        estimates: {
+          type: "array",
+          description: "Array of time estimate entries for specific assignees",
+        },
+      },
+      required: ["workspace_id", "task_id", "estimates"],
+    },
+    handler: async (args: { workspace_id: string; task_id: string; estimates: unknown[] }) =>
+      clickupV3Request(
+        "PATCH",
+        `/api/v3/workspaces/${args.workspace_id}/tasks/${args.task_id}/time_estimates_by_user`,
+        { body: args.estimates }
+      ),
+  },
+  {
+    name: "replace_task_time_estimates_by_user",
+    description: "Replace all time estimates on a task using API v3",
+    inputSchema: {
+      type: "object",
+      properties: {
+        workspace_id: { type: "string" },
+        task_id: { type: "string" },
+        estimates: {
+          type: "array",
+          description: "Complete array of time estimate entries to persist on the task",
+        },
+      },
+      required: ["workspace_id", "task_id", "estimates"],
+    },
+    handler: async (args: { workspace_id: string; task_id: string; estimates: unknown[] }) =>
+      clickupV3Request(
+        "PUT",
+        `/api/v3/workspaces/${args.workspace_id}/tasks/${args.task_id}/time_estimates_by_user`,
+        { body: args.estimates }
+      ),
   },
   {
     name: "get_task_members",
